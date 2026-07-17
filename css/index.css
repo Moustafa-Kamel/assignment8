@@ -450,15 +450,15 @@ header .icon-badge {
   width: 2.75rem;
   height: 2.75rem;
 }
-.icon-badge.one {
+.icon-badge.blue {
     background-image: var(--gradient-blue);
     box-shadow: var(--shadow-blue);
 }
-.icon-badge.two {
+.icon-badge.amber {
     background-image: var(--gradient-amber);
     box-shadow: var(--shadow-amber);
 }
-.icon-badge.three {
+.icon-badge.rose {
     background-image: var(--gradient-rose);
     box-shadow: var(--shadow-rose);
 }
