@@ -1,0 +1,142 @@
+/* ============================================================
+   MEDIA QUERIES
+   ============================================================ */
+
+/* ---------- الموبايل (أقل من 640px) ---------- */
+
+@media (max-width: 639.98px) {
+
+
+
+  .site-header .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-header .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .site-header .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .cards-grid > *:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .cards-grid > *:nth-child(n+4) {
+    grid-column: 1 / -1;
+  }
+
+  .fs-3xl { font-size: 1.5rem; }
+  .fs-2xl { font-size: 1.25rem; }
+
+  .btn-gradient,
+  .btn-soft {
+    padding: 0.6rem 1rem;
+    font-size: var(--fs-sm);
+  }
+}
+
+@media (min-width: 640px) {
+  .header-subtitle,
+  .header-extra-icons {
+    display: flex;
+  }
+}
+
+@media (min-width: 1280px) {
+  .favorites-emergency-mobile {
+    display: none !important;
+  }
+}
+@media (max-width: 1279.98px) {
+  .favorites-sidebar-desktop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .header-subtitle {
+    display: none;
+  }
+
+  #navbarNav .btn-icon {
+    display: none;
+  }
+
+  .w-1280 {
+    padding-inline: 1rem;
+  }
+
+  main {
+    padding: 1.25rem 1rem;
+  }
+  #contacts-grid .new-sec-left.d-grid {
+   grid-template-columns: 1fr !important;
+}
+}
+
+
+@media (max-width: 767.98px) {
+  #quick-stats .d-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 767.98px) {
+  #contacts-grid .d-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 1279.98px) {
+  .d-flex.gap-32 {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+    top: auto;
+  } 
+}
+
+@media (max-width: 575.98px) {
+  aside .content-card {
+    grid-template-columns: 1fr;
+    max-height: 360px;
+  }
+  .card-stat {
+    padding: 16px ;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .modal-content {
+    max-width: calc(100% - 24px);
+    margin-inline: 12px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .fs-3xl {
+    font-size: 1.5rem;
+  }
+
+  .fs-2xl {
+    font-size: 1.25rem;
+  }
+}

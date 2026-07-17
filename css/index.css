@@ -1,0 +1,1147 @@
+/* ============================================================
+   1) GOOGLE FONT
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/* ============================================================
+   2) CSS VARIABLES — كل الألوان والقيم في مكان واحد
+   ============================================================ */
+:root {
+  /* -- Base font -- */
+  --font-main: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* -- Background -- */
+  --color-bg: #f8fafc;
+
+  /* -- Grayscale (نصوص، حدود) -- */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-900: #111827;
+
+  /* -- Brand (Violet → Indigo) -- */
+  --violet-50: #f5f3ff;
+  --violet-100: #ede9fe;
+  --violet-500: #8b5cf6;
+  --violet-600: #7c3aed;
+  --violet-700: #6d28d9;
+  --indigo-500: #6366f1;
+  --indigo-600: #4f46e5;
+
+  /* -- Blue (كارت Total) -- */
+  --blue-100: #dbeafe;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+
+  /* -- Amber/Orange (كارت Favorites) -- */
+  --amber-50: #fffbeb;
+  --amber-100: #fef3c7;
+  --amber-400: #fbbf24;
+  --orange-500: #f97316;
+
+  /* -- Rose/Red (كارت Emergency) -- */
+  --rose-50: #fff1f2;
+  --rose-100: #ffe4e6;
+  --rose-500: #f43f5e;
+  --rose-600: #e11d48;
+  --red-600: #dc2626;
+
+  /* -- Emerald (نجاح / أزرار خضرا) -- */
+  --emerald-100: #d1fae5;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+
+  /* -- Gradients -- */
+  --gradient-violet: linear-gradient(135deg,
+      var(--violet-500),
+      var(--indigo-500));
+  --gradient-amber: linear-gradient(135deg,
+      var(--amber-400),
+      var(--orange-500));
+  --gradient-rose: linear-gradient(135deg, var(--rose-500), var(--red-600));
+  --gradient-blue: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+  --gradient-emerald: linear-gradient(135deg,
+      var(--emerald-500),
+      var(--emerald-600));
+
+  /* -- Font sizes (مش موجودة بالظبط في Bootstrap) -- */
+  --fs-8: 8px;
+  --fs-9: 9px;
+  --fs-10: 10px;
+  --fs-11: 11px;
+  --fs-xs: 0.75rem;
+  /* 12px */
+  --fs-sm: 0.875rem;
+  /* 14px */
+  --fs-base: 1rem;
+  /* 16px */
+  --fs-lg: 1.125rem;
+  /* 18px */
+  --fs-xl: 1.25rem;
+  /* 20px */
+  --fs-2xl: 1.5rem;
+  /* 24px */
+  --fs-3xl: 1.875rem;
+  /* 30px */
+
+  /* -- Font weights (فوق fw-bold العادي في Bootstrap) -- */
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* -- Letter spacing -- */
+  --tracking-wide: 0.025em;
+
+  /* -- Border radius (أكبر من مقاسات Bootstrap العادية) -- */
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+
+  /* -- Shadows (base + colored) -- */
+  --shadow-sm:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  --shadow-violet: 0 10px 15px -3px rgba(139, 92, 246, 0.3);
+  --shadow-blue: 0 10px 15px -3px rgba(59, 130, 246, 0.25);
+  --shadow-amber: 0 10px 15px -3px rgba(249, 156, 0, 0.25);
+  --shadow-rose: 0 10px 15px -3px rgba(255, 35, 87, 0.25);
+
+  /* -- Transitions -- */
+  --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   3) BASE
+   ============================================================ */
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-main);
+}
+
+/* ============================================================
+   4) FONT SIZE UTILITIES (مش موجودة في Bootstrap)
+   ============================================================ */
+.fs-8 {
+  font-size: var(--fs-8) !important;
+}
+
+.fs-9 {
+  font-size: var(--fs-9) !important;
+}
+
+.fs-10 {
+  font-size: var(--fs-10) !important;
+}
+
+.fs-11 {
+  font-size: var(--fs-11) !important;
+}
+
+.fs-xs {
+  font-size: var(--fs-xs) !important;
+  line-height: 1.33333;
+}
+
+.fs-sm {
+  font-size: var(--fs-sm) !important;
+}
+
+.fs-base {
+  font-size: var(--fs-base) !important;
+}
+
+.fs-lg {
+  font-size: var(--fs-lg);
+}
+
+.fs-xl {
+  font-size: var(--fs-xl);
+}
+
+.fs-2xl {
+  font-size: var(--fs-2xl);
+  line-height: 1.33333;
+}
+
+.fs-3xl {
+  font-size: var(--fs-3xl);
+  line-height: 1.2;
+}
+
+.tracking-wide {
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ============================================================
+   5) BORDER RADIUS UTILITIES (أكبر من مقاسات Bootstrap)
+   ============================================================ */
+.rounded-xl {
+  border-radius: var(--radius-xl) !important;
+}
+
+.rounded-2xl {
+  border-radius: var(--radius-2xl) !important;
+}
+
+.rounded-3xl {
+  border-radius: var(--radius-3xl) !important;
+}
+
+/* ============================================================
+   6) SHADOW UTILITIES (base مش موجودة + colored shadows)
+   ============================================================ */
+.shadow-md {
+  box-shadow: var(--shadow-md) !important;
+}
+
+.shadow-xl {
+  box-shadow: var(--shadow-xl) !important;
+}
+
+.shadow-2xl {
+  box-shadow: var(--shadow-2xl) !important;
+}
+
+.shadow-violet {
+  box-shadow: var(--shadow-violet) !important;
+}
+
+.shadow-blue {
+  box-shadow: var(--shadow-blue) !important;
+}
+
+.shadow-amber {
+  box-shadow: var(--shadow-amber) !important;
+}
+
+.shadow-rose {
+  box-shadow: var(--shadow-rose) !important;
+}
+
+/* ============================================================
+   7) GRADIENT BACKGROUND UTILITIES
+   ============================================================ */
+.bg-gradient-violet {
+  background-image: var(--gradient-violet);
+}
+
+.bg-gradient-amber {
+  background-image: var(--gradient-amber);
+}
+
+.bg-gradient-rose {
+  background-image: var(--gradient-rose);
+}
+
+.bg-gradient-blue {
+  background-image: var(--gradient-blue);
+}
+
+.bg-gradient-emerald {
+  background-image: var(--gradient-emerald);
+}
+
+.bg-amber-orange-50 {
+  background: linear-gradient(to right, var(--amber-50), #fff7ed);
+}
+
+.bg-rose-red-50 {
+  background: linear-gradient(to right, var(--rose-50), #fef2f2);
+}
+
+.rose-500 {
+  color: var(--rose-500);
+}
+
+.amber-400 {
+  color: var(--amber-400);
+}
+
+.gray-500 {
+  color: var(--gray-500);
+}
+
+.gray-400 {
+  color: var(--gray-400);
+}
+
+.gray-900 {
+  color: var(--gray-900);
+}
+
+.badge-group {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent;
+}
+
+.badge-group.family {
+  background-color: var(--blue-100);
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.badge-group.friends {
+  background-color: var(--emerald-100);
+  color: #047857;
+  border-color: #a7f3d0;
+}
+
+.badge-group.work {
+  background-color: var(--violet-100);
+  color: var(--violet-700);
+  border-color: #ddd6fe;
+}
+
+.badge-group.school {
+  background-color: var(--amber-100);
+  color: #b45309;
+  border-color: #fde68a;
+}
+
+.badge-group.other {
+  background-color: var(--gray-100);
+  color: var(--gray-600);
+  border-color: var(--gray-200);
+}
+
+.ps-44 {
+  padding-left: 44px !important;
+}
+
+.py-14 {
+  padding-block: 14px !important;
+}
+
+.m-24 {
+  margin: 1.5rem !important;
+}
+
+.my-24 {
+  margin-block: 1.5rem !important;
+}
+
+.mx-24 {
+  margin-inline: 1.5rem !important;
+}
+
+.mt-24 {
+  margin-top: 1.5rem !important;
+}
+
+.mb-24 {
+  margin-bottom: 1.5rem !important;
+}
+
+.m-32 {
+  margin: 2rem !important;
+}
+
+.my-32 {
+  margin-block: 2rem !important;
+}
+
+.mx-32 {
+  margin-inline: 2rem !important;
+}
+
+.mt-32 {
+  margin-top: 2rem !important;
+}
+
+.mb-32 {
+  margin-bottom: 2rem !important;
+}
+
+.p-20 {
+  padding: 1.25rem !important;
+}
+
+.py-20 {
+  padding-block: 1.25rem !important;
+}
+
+.px-20 {
+  padding-inline: 1.25rem !important;
+}
+
+.pt-20 {
+  padding-top: 1.25rem !important;
+}
+
+.pb-20 {
+  padding-bottom: 1.25rem !important;
+}
+
+.p-24 {
+  padding: 1.5rem !important;
+}
+
+.py-24 {
+  padding-block: 1.5rem !important;
+}
+
+.px-24 {
+  padding-inline: 1.5rem !important;
+}
+
+.pt-24 {
+  padding-top: 1.5rem !important;
+}
+
+.pb-24 {
+  padding-bottom: 1.5rem !important;
+}
+
+.gap-32 {
+  gap: 2rem !important
+}
+
+.inset-y-0 {
+  inset-block: 0 !important;
+}
+
+.w-1280 {
+  max-width: 80rem;
+  padding-inline: 2rem;
+}
+
+.m-w-0 {
+  min-width: 0;
+}
+
+.icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-xl);
+  color: #fff;
+  transition: var(--transition-base);
+}
+
+header .icon-badge {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+.icon-badge.one {
+    background-image: var(--gradient-blue);
+    box-shadow: var(--shadow-blue);
+}
+.icon-badge.two {
+    background-image: var(--gradient-amber);
+    box-shadow: var(--shadow-amber);
+}
+.icon-badge.three {
+    background-image: var(--gradient-rose);
+    box-shadow: var(--shadow-rose);
+}
+
+.icon-badge-contact.violet {
+  background-image: var(--gradient-violet);
+  box-shadow: var(--shadow-violet);
+}
+
+.icon-badge-contact.amber {
+  background-image: var(--gradient-amber);
+  box-shadow: var(--shadow-amber);
+}
+
+.icon-badge-contact.rose {
+  background-image: var(--gradient-rose);
+  box-shadow: var(--shadow-rose);
+}
+
+aside .icon-badge.amber,
+aside .icon-badge.rose {
+  width: 36px;
+  height: 36px;
+}
+
+.btn-gradient {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background-image: var(--gradient-violet);
+  color: #fff;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  border: none;
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.btn-gradient:hover {
+  box-shadow: var(--shadow-violet);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* زرار ثانوي رمادي (Cancel / Change Photo) */
+.btn-soft {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  border: none;
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.btn-soft:hover {
+  background-color: var(--gray-200);
+}
+
+/* زرار أيقونة دايري (bell / gear / close) */
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-xl);
+  color: var(--gray-500);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.btn-icon:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+
+}
+
+.btn-icon.amber-400:hover {
+  color: var(--amber-400);
+  background-color: var(--gray-100);
+}
+
+.btn-icon.rose-500:hover {
+  color: var(--rose-500);
+  background-color: var(--gray-100);
+
+}
+
+.btn-icon.violet-500:hover {
+  color: var(--violet-500);
+  background-color: var(--gray-100);
+
+}
+
+.btn-icon.rose-600:hover {
+  color: var(--rose-600);
+}
+
+/* ============================================================
+   10) CARDS — hover effects
+   ============================================================ */
+
+/* كارت الإحصائيات (Total / Favorites / Emergency) */
+.card-stat {
+  background: #fff;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-2xl);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+
+.card-stat:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* كارت جهة الاتصال (contact card) */
+.card-contact {
+  background: #fff;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+
+.card-contact:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--gray-200);
+}
+
+/* عناصر Favorites / Emergency الصغيرة داخل الـ sidebar */
+.list-item-favorite:hover {
+  background-color: var(--amber-50);
+  border-color: #fcd34d;
+  /* amber-200 تقريبي */
+}
+
+.list-item-emergency:hover {
+  background-color: var(--rose-50);
+  border-color: #fecdd3;
+  /* rose-200 تقريبي */
+}
+
+/* ============================================================
+   11) ICON HOVER داخل الكاردس (يتحول لدائرة ملونة عند الهوفر)
+   ============================================================ */
+.icon-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: var(--gray-500);
+  background-color: var(--gray-100);
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.icon-action.call:hover {
+  background-color: var(--emerald-500);
+  color: #fff;
+}
+
+.icon-action.emergency:hover {
+  background-color: var(--rose-500);
+  color: #fff;
+}
+
+.icon-action.favorite:hover {
+  color: var(--amber-400);
+}
+
+/* ============================================================
+   12) INPUTS — focus ring 
+   ============================================================ */
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  font-size: var(--fs-sm);
+  transition: var(--transition-base);
+}
+
+.input-field:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: var(--violet-500);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+}
+
+/* ============================================================
+   13) BADGES للمجموعات (Family / Friends / Work / School / Other)
+   ============================================================ */
+.badge-group {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: var(--fs-11);
+  font-weight: var(--fw-semibold);
+  border: 1px solid transparent;
+}
+
+.badge-group.family {
+  background-color: var(--blue-100);
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.badge-group.friends {
+  background-color: var(--emerald-100);
+  color: #047857;
+  border-color: #a7f3d0;
+}
+
+.badge-group.work {
+  background-color: var(--violet-100);
+  color: var(--violet-700);
+  border-color: #ddd6fe;
+}
+
+.badge-group.school {
+  background-color: var(--amber-100);
+  color: #b45309;
+  border-color: #fde68a;
+}
+
+.badge-group.other {
+  background-color: var(--gray-100);
+  color: var(--gray-600);
+  border-color: var(--gray-200);
+}
+
+/* ============================================================
+   14) SCROLLBAR HIDE 
+   ============================================================ */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================================
+   15) HEADER STICKY + BACKDROP BLUR 
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+
+  .violet-span {
+    color: var(--violet-600);
+  }
+}
+
+.header-subtitle {
+  font-size: var(--fs-xs);
+  color: var(--gray-500);
+  font-weight: var(--fw-medium);
+}
+
+.header-extra-icons {
+  /* أيقونات bell / gear */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.image-left {
+  width: 40px;
+  height: 40px;
+}
+
+.modal-backdrop {
+  --bs-backdrop-zindex: 1050;
+  --bs-backdrop-bg: #10182899;
+  position: fixed;
+  --bs-backdrop-opacity: blur(4px);
+  top: 0;
+  left: 0;
+  z-index: var(--bs-backdrop-zindex);
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bs-backdrop-bg);
+}
+
+.modal-backdrop.show {
+  backdrop-filter: blur(4px);
+}
+
+.modal-backdrop.fade {
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  scrollbar-width: none;
+  max-width: 512px;
+  box-shadow: 0 25px 50px -12px #00000040;
+  max-height: 90vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--bs-modal-color);
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+  border-radius: var(--bs-modal-border-radius);
+  outline: 0;
+}
+
+.modal-header {
+  border-bottom: 1px solid #f6f3f4;
+  z-index: 10;
+  top: 0;
+}
+
+.image-form {
+  margin-bottom: 1.25rem;
+}
+
+.icon-form {
+  font-size: 30px;
+  line-height: 1.2;
+  width: 6rem;
+  height: 6rem;
+}
+
+.image-form label {
+  color: #364153;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.42857;
+  background-color: #f6f3f4 !important;
+  cursor: pointer;
+  display: inline-flex;
+  transition: all var(--transition-base);
+
+  i {
+    color: #6a7282;
+  }
+}
+
+.image-form label:hover {
+  color: var(--gray-700);
+  background-color: var(--gray-100);
+}
+
+form div:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+select {
+  appearance: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.check input {
+  color: var(--violet-600);
+  border-radius: 4px;
+  border-color: #d1d5dc;
+  width: 1.25rem;
+  cursor: pointer;
+  height: 1.25rem;
+}
+
+.input-form.gray {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+  border-radius: var(--radius-xl);
+  font-size: var(--fs-sm);
+  transition: var(--transition-base);
+  flex: 1;
+  outline: none;
+  font-weight: 600;
+}
+
+.input-form.gray:hover {
+  outline: none;
+  background-color: var(--gray-200);
+}
+
+.input-form.violet {
+  outline: none;
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background-image: var(--gradient-violet);
+  color: #fff;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.input-form.violet:hover {
+  outline: none;
+  box-shadow: var(--shadow-violet);
+}
+
+main {
+  max-width: 80rem;
+  padding: 2rem;
+}
+
+#quick-stats .d-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#contacts-grid .new-sec-left.d-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.main-sec-left {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.main-sec-left .text-center {
+  padding-block: 5rem;
+  grid-column: 1 / -1;
+
+  div {
+    background-color: var(--gray-100);
+    width: 5rem;
+    height: 5rem;
+
+    i {
+      color: var(--gray-300);
+    }
+
+  }
+}
+
+.icon-badge-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xl);
+  color: #fff;
+  transition: var(--transition-base);
+}
+
+.icon-badge-contact.blue {
+  background-image: var(--gradient-blue);
+  box-shadow: var(--shadow-blue);
+}
+
+.phone-icon {
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+}
+
+.bg-blue {
+  background-color: var(--blue-100);
+}
+
+.bg-amber {
+  background-color: var(--amber-100);
+  color: #bb4d00;
+}
+
+.bg-violet {
+  background-color: var(--violet-100);
+}
+
+.bg-emerald {
+  background-color: var(--emerald-100);
+}
+
+.bg-violet-50 {
+  background-color: var(--violet-50);
+}
+
+.bg-emerald-50 {
+  background-color: #ecfdf5;
+}
+
+.phone-icon i.blue {
+  font-size: 9px;
+  color: #155dfc;
+}
+
+.phone-icon i.violet {
+  font-size: 9px;
+  color: var(--violet-600);
+}
+
+.phone-icon i.emerald {
+  color: var(--emerald-600);
+  font-size: 9px;
+}
+
+.footer-card {
+  padding-block: 10px;
+  background-color: #f9fafbcc;
+  border-top: 1px solid var(--gray-100);
+}
+
+.left-icons button,
+.left-icons a {
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  transition: all var(--transition-base);
+}
+
+.left-icons i.violet {
+  font-size: 14px;
+  color: var(--violet-600);
+}
+
+.left-icons i.emerald {
+  font-size: 14px;
+  color: var(--emerald-600);
+}
+
+.left-icons a:hover {
+  color: var(--emerald-600);
+  background-color: var(--emerald-100);
+}
+
+.left-icons .bg-violet-50:hover {
+  background-color: var(--violet-100);
+}
+
+.left-icons .bg-violet-50:hover i{
+  color: var(--amber-400);
+}
+
+aside {
+  width: 320px;
+  top: 112px;
+}
+
+aside .header-card {
+  border-bottom: 1px solid var(--gray-100);
+}
+
+aside .content-card {
+  max-height: 320px;
+  padding: 12px;
+  scrollbar-width: none;
+}
+
+.content-card .d-flex.gap-3 {
+  padding: 10px;
+  background-color: var(--gray-50);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.content-card .d-flex.gap-3:hover {
+  background-color: var(--amber-50);
+
+  a {
+    background-color: var(--emerald-600);
+
+    i {
+      color: white;
+    }
+  }
+}
+
+.content-card .d-flex.gap-3:hover {
+  background-color: var(--rose-50);
+
+  a.bg-rose {
+    background-color: var(--rose-500);
+
+    i {
+      color: white;
+    }
+  }
+}
+
+aside .icon-badge-right {
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.42857;
+  background-image: linear-gradient(to bottom right, #9810fa, var(--violet-500));
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+}
+.icon-badge-right.blue {
+  background-image: var(--gradient-blue);
+}
+.icon-badge-contact.violet {
+  background-image: var(--gradient-violet);
+  box-shadow: var(--shadow-violet);
+}
+.icon-badge-contact.amber {
+  background-image: var(--gradient-amber);
+  box-shadow: var(--shadow-amber);
+}
+.icon-badge-contact.rose {
+  background-image: var(--gradient-rose);
+  box-shadow: var(--shadow-rose);
+}
+aside section:first-child {
+  margin-bottom: 20px;
+}
+
+.content-card a {
+  width: 32px;
+  height: 32px;
+}
+
+
+.content-card a.bg-rose {
+  width: 32px;
+  height: 32px;
+  background-color: var(--rose-100);
+
+  i {
+    color: var(--rose-600);
+  }
+}
+
+.ring {
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 0 calc(2px + 0px) #fff;
+
+}
+
+.ring.amber {
+  background-color: var(--amber-400);
+  right: -2px;
+  top: -2px;
+
+}
+
+.ring.rose {
+  background-color: var(--rose-500);
+  right: -2px;
+  bottom: -2px;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url(../fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+body {
+  font-family: "inter";
+}
