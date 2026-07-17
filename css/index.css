@@ -462,7 +462,10 @@ header .icon-badge {
     background-image: var(--gradient-rose);
     box-shadow: var(--shadow-rose);
 }
-
+.icon-badge.violet {
+  background-image: var(--gradient-violet);
+  box-shadow: var(--shadow-violet);
+}
 .icon-badge-contact.violet {
   background-image: var(--gradient-violet);
   box-shadow: var(--shadow-violet);
